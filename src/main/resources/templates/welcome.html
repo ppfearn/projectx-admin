@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Welcome</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 200px 200px 200px;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- <div class="grid-item" id="div1"></div>
+        <div class="grid-item" id="div2"></div>
+        <div class="grid-item" id="div3"></div>  
+        <div class="grid-item" id="div4"></div>
+        <div class="grid-item" id="div5"></div>
+        <div class="grid-item" id="div6"></div>  
+        <div class="grid-item" id="div7"></div>
+        <div class="grid-item" id="div8"></div>
+        <div class="grid-item" id="div9"></div>  -->
+    </div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script>
+    $( document ).ready(function() {
+        ProjectXAPI.api.init();
+    });
+    </script>
+</body>
+</html>
