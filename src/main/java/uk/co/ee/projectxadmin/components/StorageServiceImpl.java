@@ -41,5 +41,10 @@ public class StorageServiceImpl implements StorageService {
 		}
 	}
 
+	@Override
+	public URL getResource(String path) {
+		return classLoader.getResource(path);
+	}
+
 
 }

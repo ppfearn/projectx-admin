@@ -25,11 +25,13 @@ ProjectXAPI.api = (function () {
 
     var getCarLogs = function() {
         for (i = 0; i < cars.length; i++) {
-            var logCarUrl = "/car-logs/?car=" + i;
+            // var logCarUrl = "/car-logs/?car=" + i;
+            let car = i;
+            var logCarUrl = "/car-logs-test/?car=" + car;
             $.ajax({
                 url : logCarUrl,
                 success : function(data) {
-                    console.log("log for car: " + logCarUrl + " : " + data);
+                    console.log("log for car: " + logCarUrl + " : " + data + " car: " + car);
                 },
                 error: function(request,status,errorThrown) {
                     stopCarLogs();
@@ -50,7 +52,8 @@ ProjectXAPI.api = (function () {
         tile.class = "grid-item";
         $(tile).attr['class', 'grid-item'];
         $(tile).attr['id', 'car' + carData.index];
-        var streamImageUrl = "http://" + carData.ipAddress + ":8080" + "/?action=stream";
+        // var streamImageUrl = "http://" + carData.ipAddress + ":8080" + "/?action=stream";
+        var streamImageUrl = "http://localhost:8080/test-stream";
         console.log("streamImageUrl: " + streamImageUrl);
         tile.css("background-image", "url('" + streamImageUrl + "')");
         tile.css("background-repeat", "no-repeat");
