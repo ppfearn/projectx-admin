@@ -25,8 +25,12 @@ public class CarDataProvider {
 		ipAddresses.add("192.168.1.48");
 		ipAddresses.add("192.168.1.48");
 		ipAddresses.add("192.168.1.48");
-
 		
+	}
+	
+	// TODO - For testing to create initial cars. remove later
+	{
+		initDummyCarData();
 	}
 	
 	public List<CarData> getCarData() {
