@@ -30,7 +30,7 @@ public class CarDataProvider {
 	
 	// TODO - For testing to create initial cars. remove later
 	{
-		initDummyCarData();
+//		initDummyCarData();
 	}
 	
 	public List<CarData> getCarData() {

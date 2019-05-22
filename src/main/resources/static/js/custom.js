@@ -26,12 +26,13 @@ ProjectXAPI.api = (function () {
     var getCarLogs = function() {
         for (i = 0; i < cars.length; i++) {
             // var logCarUrl = "/car-logs/?car=" + i;
-            let car = i;
+            let car = i + 1;
             var logCarUrl = "/car-logs-test/?car=" + car;
             $.ajax({
                 url : logCarUrl,
                 success : function(data) {
                     console.log("log for car: " + logCarUrl + " : " + data + " car: " + car);
+                    $("#car" + car + "-direction").text(data.replace("action=", ""));
                 },
                 error: function(request,status,errorThrown) {
                     stopCarLogs();
@@ -47,11 +48,9 @@ ProjectXAPI.api = (function () {
 
     var createCarTile = function(carData) {
         console.log("Creating tile for: " + carData);
-        var tile = $('<div id="' + ("car"  + carData.index) + '" class="grid-item"></div>)');
-        tile.id = "car" + carData.index;
-        tile.class = "grid-item";
-        $(tile).attr['class', 'grid-item'];
-        $(tile).attr['id', 'car' + carData.index];
+        var tile = $("#car"  + carData.index);
+        let car = carData.index;
+        // Set CSS for tile
         // var streamImageUrl = "http://" + carData.ipAddress + ":8080" + "/?action=stream";
         var streamImageUrl = "http://localhost:8080/test-stream";
         console.log("streamImageUrl: " + streamImageUrl);
@@ -60,15 +59,14 @@ ProjectXAPI.api = (function () {
         tile.css("background-size", "cover");
         tile.css("background-position", "center top");
 
-        var details = $('<div id="' + ("details"  + carData.index) + '"></div>)');
-        details.css("background-color", "yellow");
-        // details.css("position", "absolute"); 
-        details.css("bottom", "0"); 
-        details.css("right", "0"); 
+        $("#car" + car + "-team-name").text(carData.teamName);
+        $("#car" + car + "-logo").attr("src","/car-logo/?car=" + car);
+        $("#car" + car + "-flag").attr("src","/car-flag/?car=" + car);
 
-        tile.append(details);
-        
-        $(".grid-container").append(tile);
+    }
+
+    var flagForCar = function(car) {
+
     }
 
     var setVideoInDiv = function(ele, streamImageUrl) {

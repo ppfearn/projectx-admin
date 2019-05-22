@@ -12,6 +12,7 @@
 <title>Dashboard</title>
 <link rel="favicon" href="images/favicon.ico">
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/flex-extras.css" rel="stylesheet" type="text/css" />
 <script src="//cdn.muicss.com/mui-0.6.9/js/mui.min.js"></script>
 <script type="text/javascript">
     
@@ -44,36 +45,36 @@
             <line x1="0" y1="80" x2="100" y2="80" />
           </svg>
 			</a>
-			<!-- main content area: -->
+            <!-- main content area: -->
+            
+            <div class="container">
+                    <div class="container-box" id="car1">
+                        <div class="details-box" id="car1-details">
+                            <img class="car-logo" id="car1-logo"/>
+                            <img class="car-flag" id="car1-flag"/>
+                            </br>Team Name: <text id="car1-team-name"></text>
+                            </br>Direction: <text id="car1-direction"></text>
+                        </div>
+                    </div>
+                    <div class="container-box" id="car2">
+                        <div class="details-box" id="car2-details">
+                            <img class="car-logo" id="car2-logo"/>
+                            <img class="car-flag" id="car2-flag"/>
+                            </br>Team Name: <text id="car2-team-name"></text>
+                            </br>Direction: <text id="car2-direction"></text>
+                        </div>
+                    </div>
+                    <div class="container-box" id="car3">
+                        <div class="details-box" id="car3-details">
+                            <img class="car-logo" id="car3-logo"/>
+                            <img class="car-flag" id="car3-flag"/>
+                            </br>Team Name: <text id="car3-team-name"></text>
+                            </br>Direction: <text id="car3-direction"></text>
+                        </div>
+                    </div>
+                </div>
 
-			<!-- <div class="grid-container">
-	        <div class="grid-item" id="div1"></div>
-	        <div class="grid-item" id="div2"></div>
-	        <div class="grid-item" id="div3"></div>  
-	        <div class="grid-item" id="div4"></div>
-	        <div class="grid-item" id="div5"></div>
-	        <div class="grid-item" id="div6"></div>  
-	        <div class="grid-item" id="div7"></div>
-	        <div class="grid-item" id="div8"></div>
-	        <div class="grid-item" id="div9"></div> 
-	    </div> -->
-
-			<div class="container">
-				<div class="grid">
-					<div class="grid-cell">
-						<!-- <div class="content">1/3</div> -->
-						<div class="content grid-item" id="div1"></div>
-					</div>
-					<div class="grid-cell">
-						<!-- <div class="content">1/3</div> -->
-						<div class="content grid-item" id="div2"></div>
-					</div>
-					<div class="grid-cell">
-						<!-- <div class="content">1/3</div> -->
-						<div class="content grid-item" id="div3"></div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
