@@ -55,10 +55,11 @@ ProjectXAPI.api = (function () {
         var streamImageUrl = "http://" + carData.ipAddress + ":8080" + "/?action=stream";
         // var streamImageUrl = "http://localhost:8080/test-stream";
         console.log("streamImageUrl: " + streamImageUrl);
-        tile.css("background-image", "url('" + streamImageUrl + "')");
-        tile.css("background-repeat", "no-repeat");
-        tile.css("background-size", "cover");
-        tile.css("background-position", "center top");
+//        tile.css("background-image", "url('" + streamImageUrl + "')");
+//        tile.css("background-repeat", "no-repeat");
+//        tile.css("background-size", "cover");
+//        tile.css("background-position", "center top");
+        $("#car"  + carData.index).attr("src",streamImageUrl);
 
         $("#car" + car + "-team-name").text(carData.teamName);
         $("#car" + car + "-logo").attr("src","/car-logo/?car=" + car);

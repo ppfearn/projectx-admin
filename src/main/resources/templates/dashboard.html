@@ -11,8 +11,9 @@
 <meta name="save" content="history">
 <title>Dashboard</title>
 <link rel="favicon" href="images/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
-<link href="/css/flex-extras.css" rel="stylesheet" type="text/css" />
+<!-- <link href="/css/flex-extras.css" rel="stylesheet" type="text/css" /> -->
 <script src="//cdn.muicss.com/mui-0.6.9/js/mui.min.js"></script>
 <script type="text/javascript">
     
@@ -35,7 +36,6 @@
 				<li><a href="/dashboard">Play!</a></li>
                 <li><a href="/enter-team-details">Enter Team Details</a></li>
                 <li><a href="/reset">Reset</a></li>
-				<li><a href="/">Exit</a></li>
 			</ul>
 		</div>
 		<div class="content isOpen">
@@ -48,33 +48,180 @@
 			</a>
             <!-- main content area: -->
             
+            
+            
+            
+            
+            
+            
             <div class="container">
-                <div class="container-box" id="car1">
-                    <div class="details-box" id="car1-details">
-                        <img class="car-logo" id="car1-logo"/>
-                        <img class="car-flag" id="car1-flag"/>
-                        </br>Team Name: <text id="car1-team-name"></text>
-                        </br>Direction: <text id="car1-direction"></text>
-                    </div>
-                </div>
-                <div class="container-box" id="car2">
-                    <div class="details-box" id="car2-details">
-                        <img class="car-logo" id="car2-logo"/>
-                        <img class="car-flag" id="car2-flag"/>
-                        </br>Team Name: <text id="car2-team-name"></text>
-                        </br>Direction: <text id="car2-direction"></text>
-                    </div>
-                </div>
-                <div class="container-box" id="car3">
-                    <div class="details-box" id="car3-details">
-                        <img class="car-logo" id="car3-logo"/>
-                        <img class="car-flag" id="car3-flag"/>
-                        </br>Team Name: <text id="car3-team-name"></text>
-                        </br>Direction: <text id="car3-direction"></text>
-                    </div>
-                </div>
-            </div>
+			    <div class="row profile">
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<img class="img-fluid" id=car1>
+								<div class="bottom-left">
+							       <div class="profile-userpic">
+										<img class="car-logo img-responsive" id="car1-logo"/>
+									</div>
+							    </div>
+							    <div class="centered">
+							       <div class="profile-usertitle-job">
+										Direction: <text id="car1-direction"></text>
+									</div>
+							    </div>
+								<div class="bottom-right">
+							       <div class="flag pull-right">
+										<img class="float-right" id="car1-flag"/>
+									</div>
+							    </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="profile-usertitle">
+									<div class="profile-usertitle-name">
+										Team Name: <text id="car1-team-name"></text>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="profile-userpic">
+									<img class="car-logo img-responsive" id="car1-logo"/>
+									<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="flag pull-right">
+									<img class="float-right" id="car1-flag"/>
+								</div>
+							</div>
+						</div>	
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<img class="img-fluid" id=car2>
+								<div class="bottom-left">
+							       <div class="profile-userpic">
+										<img class="car-logo img-responsive" id="car2-logo"/>
+									</div>
+							    </div>
+							    <div class="centered">
+							       <div class="profile-usertitle-job">
+										Direction: <text id="car2-direction"></text>
+									</div>
+							    </div>
+								<div class="bottom-right">
+							       <div class="flag pull-right">
+										<img class="float-right" id="car2-flag"/>
+									</div>
+							    </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="profile-usertitle">
+									<div class="profile-usertitle-name">
+										Team Name: <text id="car2-team-name"></text>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="profile-userpic">
+									<img class="car-logo img-responsive" id="car2-logo"/>
+									<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="flag pull-right">
+									<img class="float-right" id="car2-flag"/>
+								</div>
+							</div>
+						</div>	
+					</div>
 
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12">
+								<img class="img-fluid" id=car3>
+								<div class="bottom-left">
+							       <div class="profile-userpic">
+										<img class="car-logo img-responsive" id="car3-logo"/>
+									</div>
+							    </div>
+							    <div class="centered">
+							       <div class="profile-usertitle-job">
+										Direction: <text id="car3-direction"></text>
+									</div>
+							    </div>
+								<div class="bottom-right">
+							       <div class="flag pull-right">
+										<img class="float-right" id="car3-flag"/>
+									</div>
+							    </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="profile-usertitle">
+									<div class="profile-usertitle-name">
+										Team Name: <text id="car3-team-name"></text>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="profile-userpic">
+									<img class="car-logo img-responsive" id="car3-logo"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="flag pull-right">
+									<img class="float-right" id="car3-flag"/>
+								</div>
+							</div>
+						</div>	
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</div>
+			</div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          
 			
 		</div>
 	</div>

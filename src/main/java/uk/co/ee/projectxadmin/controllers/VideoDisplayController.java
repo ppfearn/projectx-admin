@@ -84,14 +84,14 @@ public class VideoDisplayController {
 
 	// Create a car with an optional logo
 	@RequestMapping(value = "/create-car", method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<String> addCar(@RequestParam("team-name") String teamName,
+	public String addCar(@RequestParam("team-name") String teamName,
 			@RequestParam(name = "logo", required = false) MultipartFile logo) {
-
+			System.out.println("logo: " +logo);
 		try {
 			CarData car = carData.addCar(teamName, logo);
-			return new ResponseEntity<String>(JsonUtils.jsonFromObject(car), HttpStatus.CREATED);
+			return "dashboard";
 		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return e.getLocalizedMessage();
 		}
 
 	}
@@ -241,11 +241,11 @@ public class VideoDisplayController {
 	
 
 	// Reset the cars data
-	@RequestMapping(value = "/reset", method = RequestMethod.POST)
-	public ResponseEntity<Void> reset() {
+	@RequestMapping(value = "/reset", method = RequestMethod.GET)
+	public String reset() {
 		isRunning = false;
 		carData.reset();
-		return new ResponseEntity<>(HttpStatus.OK);
+		return "dashboard";
 	}
 
 	// Start a new race
