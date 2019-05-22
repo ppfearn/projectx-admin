@@ -57,6 +57,12 @@ public class VideoDisplayController {
 	public String dashboard(Model model) {
 		return "dashboard";
 	}
+	
+	// The main screen
+	@GetMapping("/enter-team-details")
+	public String enterTeamDetails(Model model) {
+		return "enter-team-details";
+	}
 
 	// Get a "test" video steam
     @GetMapping("/test-stream")
@@ -73,6 +79,8 @@ public class VideoDisplayController {
 		System.out.println("json: " + json);
 		return json;
 	}
+	
+	
 
 	// Create a car with an optional logo
 	@RequestMapping(value = "/create-car", method = RequestMethod.POST, produces = "application/json")
@@ -108,24 +116,24 @@ public class VideoDisplayController {
 	}
 	
 	// Get the car data from the CarDataProvider
-		@RequestMapping(value = "/car-flag", method = RequestMethod.GET, produces = "image/png")
-		public void getCarFlag(@RequestParam("car") String car, HttpServletResponse response) {
-			URL flagUrl = storageService.getFlag(car);
+	@RequestMapping(value = "/car-flag", method = RequestMethod.GET, produces = "image/png")
+	public void getCarFlag(@RequestParam("car") String car, HttpServletResponse response) {
+		URL flagUrl = storageService.getFlag(car);
 
-			if (flagUrl != null) {
-				response.setContentType(MediaType.IMAGE_PNG_VALUE);
-				try {
-					StreamUtils.copy(flagUrl.openStream(), response.getOutputStream());
-					response.setStatus(200);
-				} catch (IOException e) {
-					e.printStackTrace();
-					response.setStatus(500);
-				}
-				
-			} else {
-				response.setStatus(404);
+		if (flagUrl != null) {
+			response.setContentType(MediaType.IMAGE_PNG_VALUE);
+			try {
+				StreamUtils.copy(flagUrl.openStream(), response.getOutputStream());
+				response.setStatus(200);
+			} catch (IOException e) {
+				e.printStackTrace();
+				response.setStatus(500);
 			}
+			
+		} else {
+			response.setStatus(404);
 		}
+	}
 
 
 	// Get the last entry in a log file for a specified car
