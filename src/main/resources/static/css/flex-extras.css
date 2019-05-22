@@ -11,9 +11,9 @@
   
   .container-box{
     flex-basis:30%;
-    flex: initial;
-    width: 300px;
-    height: 300px;
+    /* flex: initial; */
+    width: 640px;
+    height: 480px;
     position: relative;
   }
 
