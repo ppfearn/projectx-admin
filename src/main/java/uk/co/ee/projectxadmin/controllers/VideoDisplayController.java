@@ -152,26 +152,27 @@ public class VideoDisplayController {
 			e.printStackTrace();
 		}
 		
-		return "unknown";
+//		return "unknown";
+		return null;
 	}
 	
 	// TEMP METHOD TO TEST LOGS WHEN CAR NOT CONNECTED
-	@RequestMapping(value = "/car-logs-test", method = RequestMethod.GET, produces = "application/text")
-	public @ResponseBody String getCarLogsTest(@RequestParam("car") String car, HttpServletRequest request,
-			HttpServletResponse response) {
-		try {
-			if (isRunning) {
-				String line = readRandomLineFromStream(storageService.getResource("picar.log").openStream());
-				return parseLine(line);
-			} else {
-				response.setStatus(406);
-				return null;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "unknown";
-	}
+//	@RequestMapping(value = "/car-logs-test", method = RequestMethod.GET, produces = "application/text")
+//	public @ResponseBody String getCarLogsTest(@RequestParam("car") String car, HttpServletRequest request,
+//			HttpServletResponse response) {
+//		try {
+//			if (isRunning) {
+//				String line = readRandomLineFromStream(storageService.getResource("picar.log").openStream());
+//				return parseLine(line);
+//			} else {
+//				response.setStatus(406);
+//				return null;
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return "unknown";
+//	}
 
 	private String getLastLogEntry(String car, HttpServletRequest req, HttpServletResponse resp) {
 		try {
@@ -214,29 +215,35 @@ public class VideoDisplayController {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 
 		String line = null;
+		int lineCount = 0;
 		while (reader.ready()) {
-			line = reader.readLine();
+			lineCount++;
+			String currentLine = reader.readLine();
+			if (!currentLine.contains("camready") && (currentLine.contains("action") || currentLine.contains("speed"))) {
+//				System.out.println("LINE: " +currentLine);
+				line = currentLine;
+			}
 		}
-
+		System.out.println("Line count: " +lineCount);
 		is.close();
 		return line;
 	}
 	
-	private String readRandomLineFromStream(InputStream is) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-
-		List<String> lines = new ArrayList<>();
-		String line = null;
-		while (reader.ready()) {
-			lines.add(reader.readLine());
-		}
-
-		is.close();
-		
-		int rnd = new Random().nextInt(lines.size());
-		
-		return lines.get(rnd);
-	}
+//	private String readRandomLineFromStream(InputStream is) throws IOException {
+//		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+//
+//		List<String> lines = new ArrayList<>();
+//		String line = null;
+//		while (reader.ready()) {
+//			lines.add(reader.readLine());
+//		}
+//
+//		is.close();
+//		
+//		int rnd = new Random().nextInt(lines.size());
+//		
+//		return lines.get(rnd);
+//	}
 	
 	
 
@@ -257,7 +264,7 @@ public class VideoDisplayController {
 
 	private String parseLine(String line) {
 		if (line == null) {
-			return "unknown";
+			return null;
 		}
 		Matcher matcher = Pattern.compile(actionPattern).matcher(line);
 		if (matcher.matches()) {
@@ -269,7 +276,7 @@ public class VideoDisplayController {
 			return matcher.group(1);
 		}
 
-		return "unknown";
+		return null;
 	}
 
 	// Remote control of individual Pis

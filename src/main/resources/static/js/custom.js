@@ -40,7 +40,7 @@ ProjectXAPI.api = (function () {
                }
             });
         }
-        tid = setTimeout(getCarLogs, 2000); // repeat myself
+        tid = setTimeout(getCarLogs, 1000); // repeat myself
     }
 
     function stopCarLogs() { // to be called when you want to stop the timer
