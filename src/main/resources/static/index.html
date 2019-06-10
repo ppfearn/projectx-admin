@@ -1,10 +1,171 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="save" content="history">
+<title>Dashboard</title>
+<link rel="favicon" href="images/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="/css/style-index.css" rel="stylesheet" type="text/css" />
+<!-- <link href="/css/flex-extras.css" rel="stylesheet" type="text/css" /> -->
+<!-- <script src="//cdn.muicss.com/mui-0.6.9/js/mui.min.js"></script> -->
 </head>
+
+
 <body>
-    <p>Get your greeting <a href="/greeting">here</a></p>
+
+	
+
+            <div class="container">
+            	<!-- <div class="jumbotron"> -->
+            
+            
+			    <div class="row profile">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card top-center">
+									<div class="card-body">
+										<div class="profile-usertitle-name ">
+												Team Name: <text id="car1-team-name"></text>
+										</div>
+									</div>
+								</div>
+								<img class="img-fluid center-block" id=car1>
+								<div class="bottom-left">
+							       <div class="profile-userpic">
+										<img class="car-logo img-responsive" id="car1-logo"/>
+									</div>
+							    </div>
+							    <div class="card bottom-center">
+									<div class="card-body">
+										Direction: <text id="car1-direction"></text>
+									</div>
+								</div>
+								<div class="bottom-right">
+							       <div class="flag pull-right">
+										<img class="float-right" id="car1-flag"/>
+									</div>
+							    </div>
+							</div>
+						</div>
+						<!-- <div class="row">
+							<div class="col-md-12">
+								<div class="profile-usertitle">
+									<div class="profile-usertitle-name">
+										Team Name: <text id="car1-team-name"></text>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="profile-userpic">
+									<img class="car-logo img-responsive" id="car1-logo"/>
+									<!-- <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt=""> -->
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="flag pull-right">
+									<img class="float-right" id="car1-flag"/>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<!-- </div> -->
+			</div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+
+	
+
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+	<script>
+	    $( document ).ready(function() {
+	        ProjectXAPI.api.init();
+	    });
+    </script>
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+<!-- <html> -->
+<!-- <head> -->
+<!-- <title>Dashboard</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 200px 200px 200px;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+        
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style> -->
+<!-- </head> -->
+<!-- <body>
+    <div class="grid-container">
+        <div class="grid-item" id="div1"></div>
+        <div class="grid-item" id="div2"></div>
+        <div class="grid-item" id="div3"></div>  
+        <div class="grid-item" id="div4"></div>
+        <div class="grid-item" id="div5"></div>
+        <div class="grid-item" id="div6"></div>  
+        <div class="grid-item" id="div7"></div>
+        <div class="grid-item" id="div8"></div>
+        <div class="grid-item" id="div9"></div> 
+    </div>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script>
+    $( document ).ready(function() {
+        ProjectXAPI.api.init();
+    });
+    </script>
+</body>
+</html> -->

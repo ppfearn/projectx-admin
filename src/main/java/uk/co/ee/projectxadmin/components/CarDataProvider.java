@@ -18,11 +18,11 @@ public class CarDataProvider {
 	private List<String> ipAddresses = new ArrayList<>();
 	
 	{
-		ipAddresses.add("192.168.43.26");
 		ipAddresses.add("192.168.43.191");
-		ipAddresses.add("192.168.43.26");
 		ipAddresses.add("192.168.43.191");
-		ipAddresses.add("192.168.43.26");
+		ipAddresses.add("192.168.43.191");
+		ipAddresses.add("192.168.43.191");
+		ipAddresses.add("192.168.43.191");
 		ipAddresses.add("192.168.43.191");
 		
 	}
